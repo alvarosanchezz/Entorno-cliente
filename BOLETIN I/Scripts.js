@@ -135,17 +135,61 @@ function contar_cifras() {
 //Ejercicio 18
 function clasificar_edad() {
    let edad = prompt("Introduce tu edad:");
+   edad = Number(edad);
    if (isNaN(edad) || edad < 0) {
-      alert("Por favor, introduce una edad válida.");
+      console.log("Por favor, introduce una edad válida.");
       return;
    }
    if (edad <= 16) {
-      alert("Eres un niño.");
+      console.log("Eres un niño.");
    } else if (edad <= 25) {
-      alert("Eres joven.");
+      console.log("Eres joven.");
    } else if (edad <= 60) {
-      alert("Eres adulto.");
+      console.log("Eres adulto.");
    } else {
-      alert("Eres senior.");
+      console.log("Eres senior.");
    }
+}
+
+//Ejercicio 19
+function adivina_numero() {
+   const numeroSecreto = Math.floor(Math.random() * 10) + 1;
+   let intentos = 0;
+   let acertado = false;
+   let intento;
+
+   do {
+      intento = prompt("Adivina el número (entre 1 y 10):");
+      if (intento === null) {
+         alert("Juego cancelado.");
+         break;
+      }
+      intentos++;
+      let num = parseInt(intento, 10);
+      if (isNaN(num) || num < 1 || num > 10) {
+         alert("Por favor, introduce un número válido entre 1 y 10.");
+         continue;
+      }
+      if (num === numeroSecreto) {
+         alert("¡Has acertado! El número era " + numeroSecreto + ".");
+         acertado = true;
+      } else if (num < numeroSecreto) {
+         alert("Demasiado bajo. Intenta de nuevo.");
+      } else {
+         alert("Demasiado alto. Intenta de nuevo.");
+      }
+   } while (!acertado);
+
+   console.log("Has realizado " + intentos + " intentos.");
+}
+
+//Ejercicio 20
+function contar_multiplos_de_siete() {
+   let contador = 0;
+   for (let i = 8; i <= 100; i++) {
+      if (i % 7 === 0) {
+         contador++;
+      }
+   }
+   console.log("El número de múltiplos de siete entre 8 y 100 es: " + contador);
 }
