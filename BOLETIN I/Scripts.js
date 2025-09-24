@@ -76,3 +76,76 @@ function contar_y_temporizar(){
    console.log("El valor final es: " + valor);
 }
    
+//Ejercicio 13
+function mostrar_error() {
+   console.error("Error!. No se ha encontrado ningún valor");
+}
+
+//Ejercicio 14
+function confirmar_eliminacion() {
+   if (confirm("¿Estás seguro de que deseas eliminar?")) {
+      console.log("Eliminación confirmada.");
+   } else {
+      console.log("Eliminación cancelada.");
+   }
+}
+
+//Ejercicio 15
+function programa_usuario() {
+   // a. Pedir el nombre de usuario
+   let nombre = prompt("Introduce tu nombre de usuario:");
+
+   // b. Preguntar si quiere abandonar el programa
+   let abandonar = confirm("¿Quieres abandonar el programa?");
+
+   // c. Alerta con la decisión
+   if (abandonar) {
+      alert("Has decidido abandonar el programa.");
+   } else {
+      alert("Has decidido continuar en el programa.");
+   }
+
+   // d. Mostrar por consola "FIN DEL PROGRAMA" en negrita, subrayado y azul
+   console.log("%cFIN DEL PROGRAMA", "color: blue; font-weight: bold; text-decoration: underline;");
+}
+
+//Ejercicio 16
+function felicitar_usuario() {
+   let edad = prompt("¿Cuál es tu edad?");
+   let nombre = prompt("¿Cuál es tu nombre?");
+   let ciudad = prompt("¿En qué ciudad vives?");
+   let direccion = prompt("¿Cuál es tu dirección?");
+   let telefono = prompt("¿Cuál es tu número de teléfono?");
+   
+   let edadPotencia = Math.pow(edad, 5);
+
+   if (edadPotencia == telefono || ciudad.toLowerCase() === "mairena del alcor") {
+      alert("¡Enhorabuena, " + nombre + "!");
+   }
+}
+
+//Ejercicio 17
+function contar_cifras() {
+   let numero = prompt("Introduce un número:");
+   if (numero === null) return;
+   numero = Math.abs(parseInt(numero, 10)).toString();
+   console.log("El número tiene " + numero.length + " cifras.");
+}
+
+//Ejercicio 18
+function clasificar_edad() {
+   let edad = prompt("Introduce tu edad:");
+   if (isNaN(edad) || edad < 0) {
+      alert("Por favor, introduce una edad válida.");
+      return;
+   }
+   if (edad <= 16) {
+      alert("Eres un niño.");
+   } else if (edad <= 25) {
+      alert("Eres joven.");
+   } else if (edad <= 60) {
+      alert("Eres adulto.");
+   } else {
+      alert("Eres senior.");
+   }
+}
